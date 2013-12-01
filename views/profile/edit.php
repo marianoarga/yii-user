@@ -34,6 +34,7 @@ $this->menu=array(
 		$profileFields=Profile::getFields();
 		if ($profileFields) {
 			foreach($profileFields as $field) {
+//                var_dump($field->varname);
 			?>
 	<div class="row">
 		<?php echo $form->labelEx($profile,$field->varname);

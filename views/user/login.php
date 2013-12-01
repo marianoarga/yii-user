@@ -5,7 +5,7 @@ $this->breadcrumbs=array(
 );
 ?>
 
-<?php $this->widget('ext.hoauth.widgets.HOAuth'); ?>
+<?php // $this->widget('ext.hoauth.widgets.HOAuth'); ?>
 
 <h1><?php echo UserModule::t("Login"); ?></h1>
 
