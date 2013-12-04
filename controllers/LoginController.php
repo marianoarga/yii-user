@@ -4,6 +4,28 @@ class LoginController extends Controller
 {
 	public $defaultAction = 'login';
 
+//    public function actions(){
+//        return array(
+//            'oauth' => array(
+//                'class' => 'ext.hoauth.HOAuthAction',
+//            ),
+////    'oauthadmin' => array(
+////      'class'=>'ext.hoauth.HOAuthAdminAction',
+////    ),
+//        );
+//    }
+    
+    public function actionOauth(){
+        Yii::import('ext.hoauth.HOAuthAction');
+        try {
+            $hola = new HOAuthAction($this, 'oauth');
+            $hola->run();
+        } catch (Exception $e) {
+            $this->render('/user/login_failed', array('error_message' => $e->getMessage()));
+            die;
+        }
+    }
+
 	/**
 	 * Displays the login page
 	 */

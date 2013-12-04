@@ -5,4 +5,4 @@ $this->breadcrumbs=array(
 );
 ?>
 
-<?php $this->widget('ext.hoauth.widgets.HOAuth'); ?>
+<?php echo $error_message; ?>

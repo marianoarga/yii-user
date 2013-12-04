@@ -15,7 +15,7 @@ $this->breadcrumbs=array(
 <div class="form">
 <?php $form=$this->beginWidget('UActiveForm', array(
 	'id'=>'registration-form',
-	'enableAjaxValidation'=>true,
+	'enableAjaxValidation'=>false,
 	'disableAjaxValidationAttributes'=>array('RegistrationForm_verifyCode'),
 	'clientOptions'=>array(
 		'validateOnSubmit'=>true,
@@ -78,18 +78,6 @@ $this->breadcrumbs=array(
 			}
 		}
 ?>
-	<?php if (UserModule::doCaptcha('registration')): ?>
-	<div class="row">
-		<?php echo $form->labelEx($model,'verifyCode'); ?>
-		
-		<?php $this->widget('CCaptcha'); ?>
-		<?php echo $form->textField($model,'verifyCode'); ?>
-		<?php echo $form->error($model,'verifyCode'); ?>
-		
-		<p class="hint"><?php echo UserModule::t("Please enter the letters as they are shown in the image above."); ?>
-		<br/><?php echo UserModule::t("Letters are not case-sensitive."); ?></p>
-	</div>
-	<?php endif; ?>
 	
 	<div class="row submit">
 		<?php echo CHtml::submitButton(UserModule::t("Register")); ?>
